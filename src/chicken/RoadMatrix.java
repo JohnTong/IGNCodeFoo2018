@@ -15,6 +15,7 @@ public class RoadMatrix {
     //Array holding list of reachable segments from each other segment.
     private ArrayList<Integer>[] adjSegList;
     private ArrayList<Integer> potholeLocations = new ArrayList<>();
+    private ArrayList<ArrayList<Integer>> allPaths = new ArrayList<>();
 
     public RoadMatrix(int vertices) {
         this.vertices = vertices;
@@ -90,13 +91,46 @@ public class RoadMatrix {
         pathFinderUtil(start, end, isVisited, pathList);
     }
 
+    public void illustratePath() {
+        Random r = new Random();
+        int rand = r.nextInt(allPaths.size());
+        ArrayList<Integer> randPath = allPaths.get(rand);
+
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                if(randPath.contains((n * i) + j))
+                    System.out.print("C ");
+                else if(potholeLocations.contains((n * i) + j))
+                    System.out.print("X ");
+                else
+                    System.out.print("O ");
+            }
+            System.out.print("\n");
+        }
+
+        printAsCoordinates(randPath);
+
+    }
+
+    private void printAsCoordinates(List<Integer> path) {
+        for(int i : path) {
+            int x = i / n;
+            int y = i % n;
+            System.out.print("(" + x + " , " + y + ")");
+            System.out.print(" ");
+        }
+        System.out.print("\n");
+
+    }
+
     private void pathFinderUtil(Integer u, Integer v, boolean[] isVisited, List<Integer> currentPathList) {
         // Mark the current node
         isVisited[u] = true;
 
         if (u.equals(v))
         {
-            System.out.println(currentPathList);
+            printAsCoordinates(currentPathList);
+            allPaths.add(new ArrayList<>(currentPathList));
         }
 
         // Recur for all the vertices

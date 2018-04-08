@@ -23,5 +23,7 @@ public class ChickenRoadCrosser2018 {
             int end = (4 * i) + 3;
             road.printValidPaths(randStart, end);
         }
+
+        road.illustratePath();
     }
 }
