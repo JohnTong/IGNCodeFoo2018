@@ -2,12 +2,13 @@ package rss;
 
 public class RssMessage {
 
-    String title;
-    String description;
-    String pubDate;
-    String slug;
-    String tags;
-    String category;
+    private String title;
+    private String description;
+    private String pubDate;
+    private String slug;
+    private String tags;
+    private String category;
+    private String link;
 
     public String getLink() {
         return link;
@@ -17,7 +18,7 @@ public class RssMessage {
         this.link = link;
     }
 
-    String link;
+
 
     public String getCategory() {
         return category;
