@@ -5,8 +5,9 @@ import java.util.Random;
 public class ChickenRoadCrosser2018 {
 
     public static void main(String[] args) {
-
-        RoadMatrix road = new RoadMatrix(16);
+        int n = 4;
+        int matrixSize = n * n;
+        RoadMatrix road = new RoadMatrix(matrixSize);
 
         road.setSpecificPotholes(4);
         road.setSpecificPotholes(10);
@@ -21,14 +22,14 @@ public class ChickenRoadCrosser2018 {
         boolean validStartPoint = false;
 
         while(!validStartPoint) {
-            int rand = r.nextInt(4);
-            randStart = 4 * rand;
+            int rand = r.nextInt(n);
+            randStart = n * rand;
             if(!road.getPotholeLocations().contains(randStart))
                 validStartPoint = true;
         }
 
-        for(int i = 0; i < 4; i++) {
-            int end = (4 * i) + 3;
+        for(int i = 0; i < n; i++) {
+            int end = (n * i) + (n - 1);
             road.printValidPaths(randStart, end);
         }
 

@@ -61,15 +61,15 @@ public class RoadMatrix {
     }
 
     /*
-        Create all adjacent road segments programmatically, taking care to ignore potholes, segments that are out of bounds,
-        and adjacency for exit segments(so HennyPenny doesn't waste time walking up and down the road when he's already reached
-        the end).
-         */
+    Create all adjacent road segments programmatically, taking care to ignore potholes, segments that are out of bounds,
+    and adjacency for exit segments(so HennyPenny doesn't waste time walking up and down the road when he's already reached
+    the end).
+    */
     public void createAdjLists() {
         int upSegment, downSegment, rightSegment;
 
         for(int i = 0; i < vertices; i++) {
-            if(i % n != n -1) {
+            if(i % n != n - 1) {
                 upSegment = i + n;
                 if (upSegment < vertices && !potholeLocations.contains(upSegment))
                     adjSegList[i].add(upSegment);
