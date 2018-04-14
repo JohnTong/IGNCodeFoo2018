@@ -1,4 +1,20 @@
 # IGNCodeFoo2018
 Submission for IGN Code Foo 2018
+1 - Hi, IGN! My name is John Tong and I will be graduating from the University of Louisville's Speed School of Engineering with a degree in Computer Engineering/Computer Science in just a few short weeks. Way back in 2010, I graduated from that very same school with degrees in English and Philosophy, then I spent some time, um, in contemplation of what I wanted to do with my life. After a few years, I realized that what I really wanted to do was the same thing I dreamed of doing when I was a kid: making video games. So, I went back to school and now here I am!
+You've probably guessed already, but I really enjoy video games. A lot. I play everything I can afford (which, admittedly, isn't a lot at the moment). I would say my all-time favorite game is __Bioshock__. I loved that the twist not only changed the way that the player views the story, but also commented on player agency in a game. I believe that one day, games will reach the point where true player choice is a possibility. 
+Also, I love reading! I just finished __RoadSide Picnic__. Fantasy was my genre of choice as a kid, but science-fiction is definitely my go-to genre these days. My dream job would be a creative designer for a game studio. I love games, and I love stories, so I can't imagine a profession that would bring me greater joy than to be able to develop stories for games! Outside of all that, I also enjoy building plastic Gundam models, eating, and hanging out with my family (2 dogs, 2 cats, 1 wife.)
+Lastly, why do I love IGN? Easy, because it's the source for news on everything I love: video games, television, and movies. I'm always turning to IGN to keep up on game news (am I sounding too one note?) because I love hearing about everything going on in the industry I am so excited to break into. On a day-to-day basis, I think what I especially love are the wikis you maintain. It's so helpful to be able to look up tips and walkthroughs for all of my favorite games!
+So, that's all about me, IGN. I really hope that I make an impression on you, because it would be such a great opportunity for me to gain experience in a gaming field. So, without further ado, here is my submission!
 
 2 - For the Eiffel Tower, here is my method for possibly recreating it in Geomags. First, the frame: the Eiffel Tower is 325 meters tall, and one Geomag rod + one Geomag magnet is .00397 meters long, which means to construct the frame, we have 325 / .00397 * 16 ~= 1.3 x 10^6 Geomags. Next, I would want Geomags to connect each of the legs sides to make squares at each magnet. So, the legs are approximately 50.56 meters long, therefore, 50.56 / .00397 * 16 * 65000 = 1.32 x 10^11. Lastly, I'd make little triangles between each square for support, so another 1.3 x 10^11 Geomags. So, approximately 3 x 10^11 Geomags rods and magnets.
+
+3 - This was implemented using Depth First Search, meaning it runs in Θ(|V| + |E|). As a very basic overview of how it runs, for the following tree :
+                    A
+                   / \
+                  B   C
+                 / \ / \
+                D  E F  G
+ The nodes would be traversed as: A - B - D - E - C - F - G (See https://en.wikipedia.org/wiki/Depth-first_search for much better info).
+ Also, I've decoupled the code, so while it solves for a 4x4 matrix now, changing a variable will allow for different matrix sizes.
+ 
+ 4 - For this app, the code will pull down rss feed entries and place it into the database. The database itself is (I believe) in 2nf, since, for instance, two different titles could (incorrectly) share the same link, leading to inconsistencies. However, every column describes the key title, so it is at least 2nf. I didn't have time to implement, but one service I would have added is the ability for the user to create a list of "interests" and then attempting to cross-reference those with the "tags" column and sending the user some notification that a new article has been posted aligning with their interests.
