@@ -16,9 +16,17 @@ public class ChickenRoadCrosser2018 {
         road.createAdjLists();
 
         Random r = new Random();
-        int rand = r.nextInt(4);
-        int randStart = 4 * rand;
-        
+
+        int randStart = 0;
+        boolean validStartPoint = false;
+
+        while(!validStartPoint) {
+            int rand = r.nextInt(4);
+            randStart = 4 * rand;
+            if(!road.getPotholeLocations().contains(randStart))
+                validStartPoint = true;
+        }
+
         for(int i = 0; i < 4; i++) {
             int end = (4 * i) + 3;
             road.printValidPaths(randStart, end);

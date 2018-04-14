@@ -56,11 +56,15 @@ public class RoadMatrix {
         }
     }
 
+    public ArrayList<Integer> getPotholeLocations() {
+        return potholeLocations;
+    }
+
     /*
-    Create all adjacent road segments programmatically, taking care to ignore potholes, segments that are out of bounds,
-    and adjacency for exit segments(so HennyPenny doesn't waste time walking up and down the road when he's already reached
-    the end).
-     */
+        Create all adjacent road segments programmatically, taking care to ignore potholes, segments that are out of bounds,
+        and adjacency for exit segments(so HennyPenny doesn't waste time walking up and down the road when he's already reached
+        the end).
+         */
     public void createAdjLists() {
         int upSegment, downSegment, rightSegment;
 
@@ -95,7 +99,7 @@ public class RoadMatrix {
         Random r = new Random();
         int rand = r.nextInt(allPaths.size());
         ArrayList<Integer> randPath = allPaths.get(rand);
-
+        System.out.print("\n");
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < n; j++) {
                 if(randPath.contains((n * i) + j))
@@ -107,7 +111,8 @@ public class RoadMatrix {
             }
             System.out.print("\n");
         }
-
+        System.out.println("Legend: X = Pothole, C = HennyPenny, O = Passable Road Square");
+        System.out.print("Path: ");
         printAsCoordinates(randPath);
 
     }
