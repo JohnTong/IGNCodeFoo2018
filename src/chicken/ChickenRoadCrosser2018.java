@@ -9,10 +9,8 @@ public class ChickenRoadCrosser2018 {
         int matrixSize = n * n;
         RoadMatrix road = new RoadMatrix(matrixSize);
 
-        road.setSpecificPotholes(4);
-        road.setSpecificPotholes(10);
-        road.setSpecificPotholes(13);
-        road.setSpecificPotholes(15);
+        road.setRandomPotholes(5);
+
 
         road.createAdjLists();
 

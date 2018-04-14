@@ -32,7 +32,7 @@ public class RoadMatrix {
         }
     }
 
-    public void setPotholes(int potholes) {
+    public void setRandomPotholes(int potholes) {
         this.potholes = potholes;
         createPotholes();
     }
