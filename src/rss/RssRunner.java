@@ -15,7 +15,7 @@ public class RssRunner {
                     "ign", "ignroot");
 
             PreparedStatement prepState =
-                    conn.prepareStatement("INSERT INTO ign_rss.feed_entries" +
+                    conn.prepareStatement("INSERT IGNORE INTO ign_rss.feed_entries" +
                             "(id,title, description, link, tags, category, pubDate) VALUES (DEFAULT,?,?,?,?,?,?)");
 
             RssFeedReader parser = new RssFeedReader(
