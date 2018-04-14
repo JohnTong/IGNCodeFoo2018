@@ -1,0 +1,14 @@
+CREATE DATABASE `ign_rss` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+CREATE TABLE `feed_entries` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(200) NOT NULL,
+  `description` varchar(500) DEFAULT NULL,
+  `link` varchar(150) NOT NULL,
+  `tags` varchar(150) DEFAULT NULL,
+  `category` varchar(20) DEFAULT NULL,
+  `pubDate` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  UNIQUE KEY `title_UNIQUE` (`title`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
